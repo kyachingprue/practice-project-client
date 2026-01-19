@@ -7,6 +7,7 @@ import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
 import ProductDetails from "../components/product/productDetails";
 import Profile from "../pages/Profile";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        element: <Profile/>
+        element: <PrivateRoute><Profile /></PrivateRoute>
       }
     ]
   },

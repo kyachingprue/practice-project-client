@@ -96,7 +96,7 @@ const Navbar = () => {
                 <img
                   src={user?.photoURL || "https://i.ibb.co/ZYW3VTp/brown-brim.png"}
                   alt="profile"
-                  className="w-9 h-9 rounded-full cursor-pointer border"
+                  className="w-10 h-10 rounded-full cursor-pointer border-2 border-sky-700"
                   onClick={() => setProfileOpen(!profileOpen)}
                 />
 

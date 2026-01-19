@@ -80,10 +80,10 @@ const Footer = () => {
 
           {/* Payment Methods */}
           <div className="flex gap-4">
-            <img src="https://i.ibb.co/Z8k0Z9P/visa.png" alt="Visa" className="h-6" />
-            <img src="https://i.ibb.co/2dJzq8p/mastercard.png" alt="MasterCard" className="h-6" />
-            <img src="https://i.ibb.co/YQK0N8d/paypal.png" alt="PayPal" className="h-6" />
-            <img src="https://i.ibb.co/9n3pKkN/amex.png" alt="Amex" className="h-6" />
+            <img src="https://i.ibb.co.com/jv4njvJ2/qgckc648-air-travel-625x300-26-May-25.jpg" alt="Visa" className="h-6" />
+            <img src="https://i.ibb.co.com/jv4njvJ2/qgckc648-air-travel-625x300-26-May-25.jpg" alt="MasterCard" className="h-6" />
+            <img src="https://i.ibb.co.com/jv4njvJ2/qgckc648-air-travel-625x300-26-May-25.jpg" alt="PayPal" className="h-6" />
+            <img src="https://i.ibb.co.com/jv4njvJ2/qgckc648-air-travel-625x300-26-May-25.jpg" alt="Amex" className="h-6" />
           </div>
 
           {/* Copyright */}

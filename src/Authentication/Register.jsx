@@ -4,11 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { Loader2 } from "lucide-react";
 import useAuth from "../hooks/useAuth";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const axiosPublic = useAxiosPublic();
 
   const {
     register,
@@ -20,6 +22,9 @@ const Register = () => {
   const password = watch("password", "");
   const DEFAULT_PROFILE_URL =
     "https://i.ibb.co.com/dJ23xbkn/pngtree-user-profile-avatar-png-image-10211467.png";
+  
+  const cover_image =
+    "https://i.ibb.co.com/KpKrv8bC/studio-shot-product-images.jpg";
 
   const onSubmit = async (data) => {
     setLoading(true);
@@ -32,6 +37,15 @@ const Register = () => {
         displayName: `${data.firstName} ${data.lastName}`,
         photoURL: DEFAULT_PROFILE_URL,
       });
+
+      await axiosPublic.post("/users", {
+        name: `${data.firstName} ${data.lastName}`,
+        email: data.email,
+        image: DEFAULT_PROFILE_URL,
+        cover_image: cover_image,
+        role: "buyer"
+      });
+
       toast.success("Account created successfully!");
       navigate("/login");
     } catch (error) {

@@ -1,21 +1,29 @@
-import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import {motion} from 'motion/react'
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
+import { useQuery } from '@tanstack/react-query';
 
 const ShortProductData = () => {
-  const [productData, setProductData] = useState(null);
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
 
-  useEffect(() => {
-    fetch('/data.json')
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setProductData(data);
-      });
-  } ,[])
+  const { data: productData = [], isLoading, isError } = useQuery({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const res = await axiosPublic.get('/products');
+      return res.data;
+    }
+  })
+
+  if (isLoading) {
+    return <p>Loading ...</p>
+  }
+
+  if (isError) {
+    return <p> Error data fetching ...</p>
+  }
   return (
     <div>
       <h3 className='text-3xl font-bold text-gray-700 py-5'>All Products: ({productData ? productData?.length : 0})</h3>

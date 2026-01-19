@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { ShoppingCart, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   const { scrollY } = useScroll();
@@ -38,15 +39,19 @@ const Banner = () => {
           </p>
 
           <div className="flex gap-4 mt-8">
-            <button className="flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-black font-semibold hover:scale-105 transition">
-              <ShoppingCart size={18} />
-              Shop Now
-            </button>
+            <Link to="/products">
+              <button className="flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-black font-semibold hover:scale-105 transition">
+                <ShoppingCart size={18} />
+                Shop Now
+              </button>
+            </Link>
 
-            <button className="flex items-center gap-2 px-6 py-3 rounded-lg border border-white/30 hover:bg-white/10 transition">
-              Explore More
-              <ArrowRight size={18} />
-            </button>
+            <Link to="/about">
+              <button className="flex items-center gap-2 px-6 py-3 rounded-lg border border-white/30 hover:bg-white/10 transition">
+                Explore More
+                <ArrowRight size={18} />
+              </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -63,7 +68,7 @@ const Banner = () => {
             className="absolute w-56 h-72 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl -rotate-12 -left-6"
           >
             <img
-              src="https://i.ibb.co/2S8D4Vb/shoes.png"
+              src="https://i.ibb.co.com/KpKrv8bC/studio-shot-product-images.jpg"
               alt="product"
               className="w-full h-full object-contain p-6"
             />
@@ -77,7 +82,7 @@ const Banner = () => {
             className="relative w-64 h-80 bg-white/15 backdrop-blur-xl rounded-2xl border border-white/30 shadow-2xl z-10"
           >
             <img
-              src="https://i.ibb.co/2k1ZQxZ/headphone.png"
+              src="https://i.ibb.co.com/KpKrv8bC/studio-shot-product-images.jpg"
               alt="product"
               className="w-full h-full object-contain p-6"
             />
@@ -91,7 +96,7 @@ const Banner = () => {
             className="absolute w-52 h-68 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl rotate-12 -right-6"
           >
             <img
-              src="https://i.ibb.co/QH8Yk7N/watch.png"
+              src="https://i.ibb.co.com/KpKrv8bC/studio-shot-product-images.jpg"
               alt="product"
               className="w-full h-full object-contain p-6"
             />

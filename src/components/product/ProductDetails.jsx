@@ -16,13 +16,13 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
 
-  const { data: products = [], isLoading, isError } = useQuery({
-    queryKey: ['products'],
+  const { data: products, isLoading, isError } = useQuery({
+    queryKey: ['product', id],
     queryFn: async () => {
-      const res = await axiosPublic.get('/products');
+      const res = await axiosPublic.get(`/products/${id}`);
       return res.data;
     }
-  })
+  });
 
   if (isLoading) {
     return <p>Loading...</p>

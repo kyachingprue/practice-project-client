@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
+import Loading from '../Loading';
 
 const ShortProductData = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const ShortProductData = () => {
   })
 
   if (isLoading) {
-    return <p>Loading ...</p>
+    return <Loading/>
   }
 
   if (isError) {

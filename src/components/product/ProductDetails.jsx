@@ -10,13 +10,15 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import Loading from "../Loading";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
+  console.log(id);
 
-  const { data: products, isLoading, isError } = useQuery({
+  const { data: product, isLoading, isError } = useQuery({
     queryKey: ['product', id],
     queryFn: async () => {
       const res = await axiosPublic.get(`/products/${id}`);
@@ -24,23 +26,9 @@ const ProductDetails = () => {
     }
   });
 
-  if (isLoading) {
-    return <p>Loading...</p>
-  }
-
-  if (isError) {
-    return <p>Error data details ...</p>
-  }
-
-  const product = products.find((item) => item._id === id);
-
-  if (!product) {
-    return (
-      <div className="text-center mt-20 text-red-500 text-xl">
-        Product not found
-      </div>
-    );
-  }
+  if (isLoading) return <Loading/>;
+  if (isError) return <p>Error loading product...</p>;
+  if (!product) return <p className="text-red-500 text-center mt-10">Product not found</p>;
 
   return (
     <motion.div

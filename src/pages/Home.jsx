@@ -1,11 +1,11 @@
 import React from 'react';
-import Banner from '../components/Home/Banner.jsx';
 import ShortProductData from '../components/home/ShortProductData.jsx';
+import HomeBanner from '../components/home/HomeBanner.jsx';
 
 const Home = () => {
   return (
     <div>
-      <Banner />
+      <HomeBanner/>
       <ShortProductData/>
     </div>
   );

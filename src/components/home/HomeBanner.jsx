@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ShoppingCart, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Banner = () => {
+const HomeBanner = () => {
   const { scrollY } = useScroll();
 
   // Scroll-based animation values
@@ -108,4 +108,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default HomeBanner;

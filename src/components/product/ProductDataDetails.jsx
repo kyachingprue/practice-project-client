@@ -12,7 +12,7 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../Loading";
 
-const ProductDetails = () => {
+const ProductDataDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
@@ -126,4 +126,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default ProductDataDetails;

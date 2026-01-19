@@ -7,7 +7,7 @@ import Login from "../Authentication/Login.jsx";
 import Register from "../Authentication/Register.jsx";
 import Profile from "../pages/Profile.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
-import ProductDetails from "../components/product/productDetails.jsx";
+import ProductDataDetails from "../components/product/ProductDataDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'products/:id',
-        element: <ProductDetails/>
+        element: <ProductDataDetails/>
       },
       {
         path: '/profile',

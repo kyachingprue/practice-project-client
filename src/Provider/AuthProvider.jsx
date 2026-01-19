@@ -8,8 +8,8 @@ import {
   updateProfile,
   GoogleAuthProvider,
 } from "firebase/auth";
-import AuthContext from "../context/AuthContext";
-import auth from "../firebase/firebase.config";
+import AuthContext from "../context/AuthContext.jsx";
+import auth from "../firebase/firebase.config.js";
 
 
 // Provider Component

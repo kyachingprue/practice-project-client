@@ -1,6 +1,6 @@
 import React from 'react';
-import Banner from '../components/Home/Banner';
-import ShortProductData from '../components/home/ShortProductData';
+import Banner from '../components/Home/Banner.jsx';
+import ShortProductData from '../components/home/ShortProductData.jsx';
 
 const Home = () => {
   return (

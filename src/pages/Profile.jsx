@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
-import useAuth from "../hooks/useAuth";
-import useAxiosSecure from "../hooks/useAxiosSecure";
+import useAuth from "../hooks/useAuth.jsx";
+import useAxiosSecure from "../hooks/useAxiosSecure.jsx";
 import { useQuery } from "@tanstack/react-query";
-import Loading from "../components/Loading";
+import Loading from "../components/Loading.jsx";
 
 const Profile = () => {
   const { user } = useAuth();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X, LogOut, User } from "lucide-react";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../hooks/useAuth.jsx";
 
 const Navbar = () => {
   const { user, logoutUser } = useAuth();

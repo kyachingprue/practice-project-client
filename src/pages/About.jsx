@@ -1,6 +1,6 @@
 import React from 'react';
-import AboutSection from '../components/about/AboutSection';
-import AboutProductCard from '../components/about/AboutProductCard';
+import AboutSection from '../components/about/AboutSection.jsx';
+import AboutProductCard from '../components/about/AboutProductCard.jsx';
 
 const About = () => {
   return (

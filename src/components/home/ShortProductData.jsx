@@ -1,10 +1,10 @@
-import ProductCard from './ProductCard';
+import ProductCard from './ProductCard.jsx';
 import {motion} from 'motion/react'
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import useAxiosPublic from '../../hooks/useAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic.jsx';
 import { useQuery } from '@tanstack/react-query';
-import Loading from '../Loading';
+import Loading from '../Loading.jsx';
 
 const ShortProductData = () => {
   const navigate = useNavigate();

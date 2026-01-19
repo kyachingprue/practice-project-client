@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { Loader2 } from "lucide-react";
-import useAuth from "../hooks/useAuth";
-import useAxiosPublic from "../hooks/useAxiosPublic";
+import useAuth from "../hooks/useAuth.jsx";
+import useAxiosPublic from "../hooks/useAxiosPublic.jsx";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useAuth();

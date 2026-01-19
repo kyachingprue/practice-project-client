@@ -1,12 +1,12 @@
-import ProductCard from '../components/home/ProductCard';
-import ProductBanner from '../components/product/ProductBanner';
-import useAxiosPublic from '../hooks/useAxiosPublic';
+import ProductCard from '../components/home/ProductCard.jsx';
+import ProductBanner from '../components/product/ProductBanner.jsx';
+import useAxiosPublic from '../hooks/useAxiosPublic.jsx';
 import { useQuery } from "@tanstack/react-query";
 
 const Products = () => {
   const axiosPublic = useAxiosPublic();
 
-  const { data: products = [], isLoading, isError, refetch } = useQuery({
+  const { data: products = [], isLoading, isError } = useQuery({
     queryKey: ['products'],
     queryFn: async () => {
       const res = await axiosPublic.get('/products');

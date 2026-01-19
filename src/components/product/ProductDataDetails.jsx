@@ -8,9 +8,9 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAxiosPublic from "../../hooks/useAxiosPublic.jsx";
 import { useQuery } from "@tanstack/react-query";
-import Loading from "../Loading";
+import Loading from "../Loading.jsx";
 
 const ProductDataDetails = () => {
   const { id } = useParams();

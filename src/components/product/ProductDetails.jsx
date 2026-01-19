@@ -8,21 +8,29 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [products, setProducts] = useState([]);
+  const axiosPublic = useAxiosPublic();
 
-  useEffect(() => {
-    fetch("/data.json")
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setProducts(data);
-    })
-  },[])
+  const { data: products = [], isLoading, isError } = useQuery({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const res = await axiosPublic.get('/products');
+      return res.data;
+    }
+  })
+
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
+
+  if (isError) {
+    return <p>Error data details ...</p>
+  }
 
   const product = products.find((item) => item._id === id);
 
